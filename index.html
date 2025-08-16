@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Netra Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><span>Netra</span></div>
+            <div class="links">
+                <a href="#" onclick="showSection('home')">Home</a>
+                <a href="#" onclick="showSection('about')">About</a>
+                <a href="#" onclick="showSection('skills')">Skills</a>
+                <a href="#" onclick="showSection('contact')">Contact</a>
+            </div>
+            <div class="hamburg" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div class="dropdown" id="mobileMenu">
+            <a href="#" onclick="showSection('home')">Home</a>
+            <a href="#" onclick="showSection('about')">About</a>
+            <a href="#" onclick="showSection('skills')">Skills</a>
+            <a href="#" onclick="showSection('contact')">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <section id="home" class="section active">
+        <h1>Hello, I'm <span>Netra Vora</span></h1>
+        <p>Welcome to my personal portfolio! Scroll around to know more about me.</p>
+    </section>
+    
+    <section id="about" class="section">
+        <h1>Welcome!</h1>
+        <p>I am currently studying Artificial Intelligence and Machine Learning at SVKM's Dwarkadas J. Sanghvi College of Engineering</p>
+        
+    </section>
+
+    <section id="skills" class="section">
+        <h1>My Skills</h1>
+        <ul>
+            <li>C programming</li>
+            <li>Java</li>
+            <li>Python Programming</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript basics</li>
+        </ul>
+        <p>Non Tech Skills:</p>
+        <ul>
+            <li>Creative</li>
+            <li>Analytical Thinking</li>
+            <li>Problem Solving</li>
+            <li>Fast Learner</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <h1>Contact Me</h1>
+        <p>Email: <a href="netrabvr@gmail.com">netrabvr@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/netra-vora-26a32a35a/">Netra Vora</a></p>
+        <p>GitHub: <a href="https://github.com/netrabvr-collab">Netra</a></p>
+    </section>
+
+
+    <script>
+        function toggleMenu(){
+            document.getElementById("mobileMenu").classList.toggle("show");
+
+        }
+        function showSection(sectionId){
+            document.querySelectorAll('.section').forEach(sec=>{
+                sec.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            document.getElementById("mobileMenu").classList.remove("show");
+        }
+        
+    </script>
+</body>
+</html>

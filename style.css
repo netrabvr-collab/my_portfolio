@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ffe4ec, #d4f1f4);
+    color: #333;
+    transition: background 0.5s ease;
+}
+
+
+nav {
+    background: linear-gradient(to right, #ffb6c1, #ff9aa2);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #6d1b3b;
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background: #6d1b3b;
+    transition: width 0.3s ease;
+}
+
+.links a:hover::after {
+    width: 100%;
+}
+
+.hamburg {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    display: none;
+    flex-direction: column;
+    background: #ffb6c1;
+    padding: 10px;
+}
+
+.dropdown a {
+    padding: 8px 0;
+}
+
+.dropdown.show {
+    display: flex;
+}
+
+
+.section {
+    display: none;
+    max-width: 750px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease;
+    border: 2px solid transparent;
+}
+
+.section.active {
+    display: block;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border: 2px solid #ffb6c1;
+}
+
+.section:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.18);
+}
+
+.section h1 {
+    color: #6d1b3b;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(109, 27, 59, 0.1);
+}
+
+.section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style: none;
+}
+
+.section ul li {
+    background: #ffe4ec;
+    padding: 10px;
+    margin: 6px 0;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.section ul li:hover {
+    background: #ffd4e2;
+}
+
+
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    .links {
+        display: none;
+    }
+    .hamburg {
+        display: block;
+    }
+}
